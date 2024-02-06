@@ -15,6 +15,6 @@ def load_from_file(file_name):
 
 fig, ax = plt.subplots()
 
-ax.plot(*load_from_file("wynik/wynik.txt"), '.')
+ax.plot(*load_from_file("wynik/wynik.txt"), linewidth=1)
 
 fig.savefig("wynik/wynik.png")

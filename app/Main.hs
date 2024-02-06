@@ -63,7 +63,8 @@ solve n = let invertedBMatrix = inverse $ getBMatrix n
 
 
 getFunctionValues :: Int -> Domain -> [Float]
-getFunctionValues n (a, b) = map (\x -> (x + 0.5) / int2Float n * (b - a) + a) [0..int2Float n - 1]
+getFunctionValues n (a, b) = map (\x -> x / sampleRate * (b - a) + a) [0..sampleRate]
+    where sampleRate = int2Float $ 30 * n
 
 
 getPhiFunction :: Int -> [Float] -> Function
